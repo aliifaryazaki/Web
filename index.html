@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280"> 
+    <title>Aliifryz Portofolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <span class="white">Aliif</span><span class="blue">ryz.</span>
+        </div>
+        
+        <div class="navbar-wrapper">
+            <ul id="navbar">
+                <li class="nav-item active" onclick="scrollToSection('home')">HOME</li>
+                <li class="nav-item" onclick="scrollToSection('about')">ABOUT</li>
+                <li class="nav-item" onclick="scrollToSection('project')">PROJECT</li>
+                <li class="nav-item" onclick="scrollToSection('skill')">SKILL</li>
+                <li class="nav-item" onclick="scrollToSection('music')">MUSIC</li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="home" class="hero">
+        <div class="content entrance-content">
+            <h4 class="welcome">Welcome</h4>
+            <h1>Hello Everyone I'm <br><span>Aliifryz</span></h1>
+            <p>I am a web developer focused on building modern, responsive, and efficient websites.</p>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-text"><h2>09+</h2><p>Project Completed</p></div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-text"><h2>10+</h2><p>Years Experience</p></div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-text"><h2 id="likeCounter">2009</h2><p>Happy Like
+                    </p></div>
+                </div>
+            </div>
+
+            <div class="action-area">
+                <div class="buttons">
+                    <button class="btn-primary" id="themeToggle">
+                        <span class="btn-text">Pink on</span>
+                        <div class="loading-bar"></div>
+                    </button>
+<button class="btn-secondary" id="btnWA" onclick="window.open('https://wa.me/6285609305357', '_blank')">
+    <span class="btn-text">WhatsApp</span>
+    <div class="loading-bar"></div>
+</button>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon" data-color="#fff"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon" data-color="#e1306c"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" data-color="#ff0000"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon" data-color="#69c9d0"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-showcase">
+            <div class="video-mockup entrance-video" id="mainVideo">
+                <video autoplay muted loop playsinline><source src="video.mp4" type="video/mp4"></video>
+                <div class="badge badge-top">Responsive</div>
+                <div class="badge badge-bottom-right">
+                    <i class="fab fa-cuttlefish"></i> Developer
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <div class="video-mockup">
+                    <video autoplay muted loop playsinline>
+                        <source src="video.mp4" type="video/mp4">
+                    </video>
+                    <div class="badge badge-top">10+ Years Experience</div>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <h2 class="about-title">About <span>me</span></h2>
+                <p>Hi, my name is Aliifryz. I am a web developer and creative designer passionate about building digital experiences.</p>
+                
+<div class="info-box">
+    <div class="info-item" onclick="window.open('https://www.google.com/maps/search/Tulang+Bawang+Lampung', '_blank')">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="info-text">
+            <h4>My Location</h4>
+            <p>Lampung, Tulang Bawang</p>
+        </div>
+    </div>
+    <div class="info-item" onclick="window.open('https://wa.me/6285609305357', '_blank')">
+        <i class="fas fa-phone-alt"></i>
+        <div class="info-text">
+            <h4>My Phone Number</h4>
+            <p>+6285609305357</p>
+        </div>
+    </div>
+</div>
+                
+<a href="CV-Aliifryz-HD.mp4" download="CV_Aliifryz_HD.mp4" style="text-decoration: none;">
+    <button class="btn-secondary" id="btnCV">
+        <span class="btn-text">Download CV</span>
+        <div class="loading-bar"></div>
+    </button>
+</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class="projects" style="padding: 60px 0;">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 40px; font-size: 35px;">Latest Project</h2>
+        <div class="project-container">
+            <div class="project-card">
+                <img src="1.jpeg" alt="Project 1">
+                <h3>Pesan</h3>
+                <p>Salamat Malam </p>
+                <div class="project-tags"><span class="tag"></span></div>
+            </div>
+            <div class="project-card">
+                <img src="2.jpeg" alt="Project 2">
+                <h3>Pesan</h3>
+                <p>Selamat Pagi</p>
+                <div class="project-tags"><span class="tag"></span></div>
+            </div>
+            <div class="project-card">
+                <img src="3.jpeg" alt="Project 3">
+                <h3>Pesan</h3>
+                <p>Mandi kamu bau</p>
+                <div class="project-tags"><span class="tag"></span></div>
+            </div>
+            <div class="project-card">
+                <img src="4.jpeg" alt="Project 4">
+                <h3>Pesan</h3>
+                <p>lop Youu</p>
+                <div class="project-tags"><span class="tag"></span></div>
+            </div>
+            <div class="project-card">
+                <img src="5.jpeg" alt="Project 5">
+                <h3>Pesan</h3>
+                <p>Udah makan belom</p>
+                <div class="project-tags"><span class="tag"></span></div>
+            </div>
+            <div class="project-card">
+                <img src="6.jpeg" alt="Project 6">
+                <h3>Pesan</h3>
+                <p>Main</p>
+                <div class="project-tags"><span class="tag"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skill" class="skills" style="padding: 60px 0;">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 40px; font-size: 35px;">My Skill</h2>
+        <div class="skill-container">
+            <div class="skill-card" onclick="focusSkill(this)">
+                <img src="html.png" alt="HTML">
+                <span>HTML</span>
+            </div>
+            <div class="skill-card" onclick="focusSkill(this)">
+                <img src="css.png" alt="CSS">
+                <span>CSS</span>
+            </div>
+            <div class="skill-card" onclick="focusSkill(this)">
+                <img src="js.png" alt="JS">
+                <span>JavaScript</span>
+            </div>
+            <div class="skill-card" onclick="focusSkill(this)">
+                <img src="wp.png" alt="Wordpress">
+                <span>Wordpress</span>
+            </div>
+            <div class="skill-card" onclick="focusSkill(this)">
+                <img src="elementor.png" alt="Elementor">
+                <span>Elementor</span>
+            </div>
+            <div class="skill-card" onclick="focusSkill(this)">
+                <img src="python.png" alt="Python">
+                <span>Python</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="music" class="music-section" style="padding: 80px 8%; text-align: center;">
+        <h2 class="section-title" style="font-size: 35px; margin-bottom: 40px;">My <span>Music</span> Video</h2>
+        
+        <div class="music-player-container" style="max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 25px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1);">
+            <div class="main-video-display" style="width: 100%; border-radius: 15px; overflow: hidden; margin-bottom: 25px; border: 2px solid var(--blue); background: #000;">
+                <video id="playerVideo" controls autoplay muted style="width: 100%; aspect-ratio: 16/9; display: block;">
+                    <source id="vSource" src="v1.mp4" type="video/mp4">
+                </video>
+                <div style="padding: 15px; text-align: left; background: rgba(0,0,0,0.5);">
+                    <h3 id="activeTitle" style="margin: 0; font-size: 20px; color: #fff;">Judul Lagu 1</h3>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                <div class="v-card active" onclick="playThis('v1.mp4', 'Judul Lagu 1', this)" style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 15px; cursor: pointer; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="height: 50px; background: #111; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;"><i class="fas fa-play" style="color: var(--blue);"></i></div>
+                    <p style="font-size: 13px; margin: 0;">Judul Lagu 1</p>
+                </div>
+                <div class="v-card" onclick="playThis('v2.mp4', 'Judul Lagu 2', this)" style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 15px; cursor: pointer; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="height: 50px; background: #111; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;"><i class="fas fa-play" style="color: var(--blue);"></i></div>
+                    <p style="font-size: 13px; margin: 0;">Judul Lagu 2</p>
+                </div>
+                <div class="v-card" onclick="playThis('v3.mp4', 'Judul Lagu 3', this)" style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 15px; cursor: pointer; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="height: 50px; background: #111; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;"><i class="fas fa-play" style="color: var(--blue);"></i></div>
+                    <p style="font-size: 13px; margin: 0;">Judul Lagu 3</p>
+                </div>
+                <div class="v-card" onclick="playThis('v4.mp4', 'Judul Lagu 4', this)" style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 15px; cursor: pointer; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="height: 50px; background: #111; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;"><i class="fas fa-play" style="color: var(--blue);"></i></div>
+                    <p style="font-size: 13px; margin: 0;">Judul Lagu 4</p>
+                </div>
+                <div class="v-card" onclick="playThis('v5.mp4', 'Judul Lagu 5', this)" style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 15px; cursor: pointer; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="height: 50px; background: #111; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;"><i class="fas fa-play" style="color: var(--blue);"></i></div>
+                    <p style="font-size: 13px; margin: 0;">Judul Lagu 5</p>
+                </div>
+                <div class="v-card" onclick="playThis('v6.mp4', 'Judul Lagu 6', this)" style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 15px; cursor: pointer; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="height: 50px; background: #111; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;"><i class="fas fa-play" style="color: var(--blue);"></i></div>
+                    <p style="font-size: 13px; margin: 0;">Judul Lagu 6</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 Aliifryz. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

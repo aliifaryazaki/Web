@@ -1,0 +1,524 @@
+:root {
+    --bg: #050509;
+    --blue: #00e5ff; /* Warna default C++ Mode */
+    --text: #ffffff;
+    --gray: #a0a0b0;
+    --nav-bg: #10101a;
+    
+    /* Variabel Warna Pink untuk Mode Pink */
+    --pink: #ff2d55;
+    --pink-glow: rgba(255, 45, 85, 0.6);
+}
+
+* { 
+    margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; 
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent; 
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    width: 1280px; margin: 0 auto;
+    overflow-x: auto;
+    transition: background-color 0.5s ease;
+}
+
+nav {
+    display: flex; justify-content: space-between; padding: 25px 8%;
+    align-items: center; position: fixed; width: 1280px; z-index: 100;
+}
+
+.logo { font-size: 28px; font-weight: 700; letter-spacing: 1px; }
+.logo .white { color: #ffffff; }
+.logo .blue { color: var(--blue); transition: 0.5s ease; }
+
+.navbar-wrapper {
+    background: var(--nav-bg);
+    padding: 10px 10px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+nav ul { display: flex; gap: 5px; list-style: none; }
+
+.nav-item {
+    padding: 8px 15px; border-radius: 50px; cursor: pointer;
+    font-size: 14px; color: var(--text); transition: 0.3s ease;
+    border: none;
+    background: transparent;
+}
+
+/* Update bagian ini di style.css lu */
+.nav-item.active {
+    background: var(--blue); 
+    color: #000000 !important; /* WAJIB: Biar teks jadi hitam pas background biru */
+    font-weight: 700;
+    box-shadow: 0 0 15px var(--blue); /* Opsional: Biar makin nyala */
+}
+
+.hero {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    padding: 120px 8% 60px;
+    min-height: auto;
+}
+
+.content { margin-top: 50px; }
+h1 { font-size: 50px; line-height: 1.1; margin-bottom: 20px; transition: 0.5s ease; }
+h1 span { color: var(--blue); transition: 0.5s ease; }
+
+.stats { display: flex; gap: 15px; margin-bottom: 30px; }
+.stat-box {
+    background: rgba(255,255,255,0.03);
+    width: 150px; padding: 15px; border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.05); text-align: center;
+}
+
+.action-area { display: flex; flex-direction: column; gap: 20px; }
+.buttons { display: flex; gap: 10px; align-items: center; }
+
+/* --- TOMBOL --- */
+.btn-primary, .btn-secondary {
+    position: relative; 
+    overflow: hidden;    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    padding: 12px 28px; 
+    border-radius: 50px; 
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.4s ease;
+}
+
+.btn-primary { 
+    background: var(--blue); 
+    color: #000; 
+    border: none;
+}
+
+.btn-secondary {
+    background: transparent; 
+    border: 2px solid var(--blue); 
+    color: var(--blue);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
+}
+
+.btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.loading-bar {
+    position: absolute;
+    top: 0;
+    left: -25%;
+    height: 100%;
+    width: 0%; 
+    background: rgba(255, 255, 255, 0.4);
+    transform: skewX(-25deg);
+    z-index: 0;
+    transition: width 0.05s linear;
+    pointer-events: none;
+}
+
+.btn-secondary:disabled {
+    border-color: var(--gray);
+    color: var(--gray);
+    cursor: default;
+    opacity: 0.6;
+}
+
+.social-links { display: flex; gap: 20px; padding-left: 10px; }
+.social-icon { color: var(--gray); font-size: 24px; transition: 0.3s; text-decoration: none; }
+.social-icon.active { transform: scale(1.2); filter: drop-shadow(0 0 8px currentColor); }
+
+.video-mockup {
+    width: 380px; height: 500px; border-radius: 25px;
+    border: 5px solid #1a1a2e; position: relative; overflow: visible;
+}
+video { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
+
+.badge {
+    position: absolute; background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px); padding: 8px 15px; border-radius: 10px;
+}
+.badge-top { top: 30px; left: -30px; }
+.badge-bottom-right { 
+    bottom: 30px; right: 10px; 
+    border: 1px solid var(--blue); 
+    transition: 0.5s ease;
+}
+
+@keyframes bump {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); color: var(--blue); }
+    100% { transform: scale(1); }
+}
+.bump { animation: bump 0.3s ease-out; }
+
+.entrance-content, .entrance-video {
+    opacity: 0;
+    transform: scale(0.1); 
+    transition: transform 2.5s cubic-bezier(0.2, 1, 0.3, 1), opacity 1s ease;
+}
+
+.entrance-video { transition-delay: 0.5s; }
+
+.entrance-anim {
+    opacity: 1 !important;
+    transform: scale(1) !important; 
+}
+
+/* --- MODE PINK --- */
+.pink-mode {
+    --blue: var(--pink) !important;
+}
+
+.pink-mode .btn-primary {
+    color: #fff;
+    box-shadow: 0 5px 15px var(--pink-glow);
+}
+
+.pink-mode .nav-item.active {
+    color: #fff;
+    box-shadow: 0 0 15px var(--pink-glow);
+}
+
+.pink-mode h1 span {
+    text-shadow: 0 0 10px var(--pink-glow);
+}
+
+.pink-mode .badge-bottom-right {
+    box-shadow: 0 0 10px var(--pink-glow);
+}
+
+.pink-mode .logo .blue {
+    text-shadow: 0 0 10px var(--pink-glow);
+}
+
+.pink-mode #themeToggle {
+    background-color: #333;
+    color: var(--pink);
+    border: 2px solid var(--pink);
+}
+
+.about-section {
+    padding: 80px 8% 100px; 
+    background-color: var(--bg);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+
+.about-image { flex: 1; display: flex; justify-content: center; }
+.about-content { flex: 1.2; }
+
+.about-title { font-size: 45px; margin-bottom: 20px; }
+.about-title span { color: var(--blue); }
+
+.about-content p {
+    color: var(--gray);
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Ini biar kiri kanan seimbang */
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.info-item:hover {
+    border-color: var(--blue);
+    background: rgba(0, 229, 255, 0.05);
+}
+
+.info-item i { font-size: 20px; color: var(--blue); }
+.info-text h4 { font-size: 12px; color: var(--gray); margin: 0; }
+.info-text p { font-size: 13px; font-weight: 600; margin: 0; }
+
+
+.info-text p {
+    color: #fff;
+    font-size: 14px; /* Teks isi proposional */
+    font-weight: 600;
+}
+
+/* EFEK AKTIF SAAT DIKLIK */
+.info-item.active {
+    transform: scale(1.03);
+    border: 1px solid var(--blue);
+    background: rgba(0, 229, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.info-item.active i {
+    color: var(--blue);
+}
+
+/* Efek Kilap */
+.info-item.active::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 50%;
+    height: 300%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(35deg);
+    animation: superShine 1.5s infinite;
+}
+
+@keyframes superShine {
+    0% { left: -100%; }
+    100% { left: 150%; }
+}
+.project-container {
+    display: grid;
+    /* Ini yang bikin jadi 3 kolom ke samping */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    padding: 0 8% 50px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;      /* Tinggi foto disamain semua biar rapi */
+    object-fit: cover;  /* Foto otomatis kepotong rapi, nggak bakal gepeng */
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.project-card {
+    background: #161625;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--blue);
+}
+
+/* --- SECTION SKILLS FIX: EFEK NGEMBUN KACA BASAH --- */
+
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Kolom buat HP */
+    gap: 15px;
+    padding: 20px;
+    position: relative; /* Kunci blur biar gak bocor */
+    overflow: hidden;   /* Biar blur gak keluar area skill */
+    border-radius: 15px;
+    transition: 0.5s ease;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+    z-index: 10;
+    position: relative;
+}
+
+.skill-card img {
+    width: 35px !important;
+    height: 35px !important;
+    object-fit: contain;
+}
+
+.skill-card span {
+    color: #fff;
+    font-size: 14px;
+}
+/* --- EFEK BLUR SENSOR JERNIH (TETAP TERANG) --- */
+
+.skill-container.has-active::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    
+    /* 1. HAPUS SEMUA WARNA: Biar bener-bener jernih gak ketutup item/putih */
+    background: transparent; 
+    
+    /* 2. EFEK SENSOR JERNIH: Blur tinggi tapi saturasi dinaikin biar warna logo tetep keluar */
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    
+    z-index: 5;
+    pointer-events: none;
+    border-radius: 15px;
+}
+
+/* Kartu yang TIDAK dipilih: Jelas kelihatan bentuknya tapi kena sensor */
+.skill-container.has-active .skill-card:not(.active) {
+    opacity: 0.7; /* Naikin biar tombol lain JELAS kelihatan */
+    filter: blur(2px); /* Blur tipis banget di kartunya biar estetik */
+    transform: scale(0.98);
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.05); /* Kasih kesan kaca tipis */
+}
+
+/* Kartu yang LAGI AKTIF: Tajam, Jernih, & Paling Depan */
+.skill-card.active {
+    background: #111111 !important; /* Hitam pekat biar dia paling menonjol */
+    border: 2px solid var(--blue);
+    box-shadow: 0 0 30px var(--blue);
+    transform: scale(1.05);
+    z-index: 20; 
+    filter: blur(0) brightness(1.2); /* Dibikin lebih jernih/terang */
+    opacity: 1 !important;
+}
+
+
+/* --- CONTACT & FOOTER (MENTOK BAWAH) --- */
+.contact {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.social-icon {
+    font-size: 28px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+footer {
+    padding: 30px 8%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+}
+/* --- Tambahkan ini di paling bawah style.css --- */
+
+html {
+    scroll-behavior: smooth; /* Biar scroll-nya meluncur halus */
+}
+
+/* Biar pas sampe di tujuan, judulnya gak kepotong Navbar */
+section, main {
+    scroll-margin-top: 100px; 
+}
+
+/* --- FIX NAVIGASI: HURUF HARUS KELIHATAN --- */
+.nav-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 20px;
+    border-radius: 50px; /* Biar bentuknya kapsul */
+}
+
+.nav-item.active {
+    background: var(--blue) !important; 
+    color: #000000 !important; /* INI KUNCINYA: Huruf jadi HITAM pekat biar kelihatan */
+    font-weight: 700;
+    box-shadow: 0 0 15px var(--blue);
+}
+
+/* Supaya pas di-scroll gak kaku */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Biar pas sampe tujuan gak kepotong navbar */
+section, main {
+    scroll-margin-top: 100px;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--blue);
+    box-shadow: 0 0 10px var(--blue);
+}
+/* ==========================================
+   EFEK GLOW BIRU SAAT VIDEO AKTIF
+========================================== */
+
+/* 1. Atur transisi biar efeknya halus */
+.v-card {
+    transition: all 0.3s ease; /* Transisi untuk warna background, border, dan glow */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Border default samar */
+}
+
+/* 2. Gaya saat kotak AKTIF (Dipencet) */
+.v-card.active {
+    background: rgba(0, 229, 255, 0.05); /* Sedikit warna biru transparan di background */
+    
+    /* GANTI WARNA GARIS TEPI JADI BIRU NEON */
+    border: 1px solid var(--blue); 
+    
+    /* TAMBAHKAN EFEK GLOW (CAHAYA) */
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5); /* Glowing biru */
+    
+    transform: scale(1.05); /* Sedikit membesar biar makin kerasa fokusnya */
+    z-index: 10; /* Agar glowing-nya di atas kotak lain */
+}
+
+/* 3. Gaya Judul Lagu saat AKTIF */
+.v-card.active p {
+    color: var(--blue); /* Judul lagu ikut jadi biru */
+    font-weight: 700; /* Teks jadi tebal */
+}
+
+/* 4. Gaya Ikon Play saat AKTIF */
+.v-card.active i {
+    color: var(--blue); /* Ikon play jadi biru terang */
+}
+/* --- Kasih Jarak Tombol CV Biar Gak Nempel --- */
+#btnCV {
+    margin-top: 40px !important; /* Pakai !important biar pasti turun */
+    display: block; /* Biar margin-nya bekerja maksimal */
+}
+
+/* --- Pastikan Info Box Ada Jarak Bawah --- */
+.info-box {
+    margin-bottom: 20px;
+}
